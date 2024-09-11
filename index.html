@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACSE Department</title>
+    <style>
+        body
+        {
+            background-color: paleturquoise;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header 
+        {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em; 
+        }
+        .branches 
+        {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .branches a
+         {
+            padding: 15px 30px;
+            background-color: palevioletred;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.5em; 
+        }
+        .branches a:hover 
+        {
+            background-color: plum;
+        }
+        section.branch {
+            display: none; 
+        }
+        .subject-details {
+            display: none;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+            flex: 1; 
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2em; 
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1em; 
+        }
+    </style>
+    <script>
+        function showBranch(branchId) {
+           
+            document.querySelector('.branches').style.display = 'none';
+            const branches = document.querySelectorAll('section.branch');
+            branches.forEach(branch => {
+                branch.style.display = 'none';
+            });
+            const selectedBranch = document.getElementById(branchId);
+            selectedBranch.style.display = 'block';
+        }
+
+        function toggleSubject(subjectId) {
+            const subjectDetails = document.querySelectorAll('.subject-details');
+            subjectDetails.forEach(detail => {
+                detail.style.display = 'none';
+            });
+            const selectedSubject = document.getElementById(subjectId);
+            selectedSubject.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        ACSE DEPARTMENT
+    </header>
+    <main>
+        <div class="branches">
+            <a href="javascript:void(0);" onclick="showBranch('ds')">DS Branch</a>
+            <a href="javascript:void(0);" onclick="showBranch('aiml')">AIML Branch</a>
+            <a href="javascript:void(0);" onclick="showBranch('csbs')">CSBS Branch</a>
+            <a href="javascript:void(0);" onclick="showBranch('cse')">CSE Branch</a>
+        </div>
+        <section id="ds" class="branch">
+            <h2>DS Branch</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('ds_dl')">Deep Learning (DL)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('ds_fip')">FIP</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('ds_wt')">Web Technologies (WT)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('ds_oops')">Object-Oriented Programming Systems (OOPS)</a></li>
+            </ul>
+        </section>
+        <section id="aiml" class="branch">
+            <h2>AIML Branch</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('aiml_dl')">Deep Learning (DL)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('aiml_fip')">FIP</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('aiml_wt')">Web Technologies (WT)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('aiml_oops')">Object-Oriented Programming Systems (OOPS)</a></li>
+            </ul>
+        </section>
+        <section id="csbs" class="branch">
+            <h2>CSBS Branch</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('csbs_dl')">Deep Learning (DL)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('csbs_fip')">FIP</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('csbs_wt')">Web Technologies (WT)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('csbs_oops')">Object-Oriented Programming Systems (OOPS)</a></li>
+            </ul>
+        </section>
+        <section id="cse" class="branch">
+            <h2>CSE Branch</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('cse_dl')">Deep Learning (DL)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('cse_fip')">FIP</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('cse_wt')">Web Technologies (WT)</a></li>
+                <li><a href="javascript:void(0);" onclick="toggleSubject('cse_oops')">Object-Oriented Programming Systems (OOPS)</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="ds_dl">
+            <h3>Deep Learning (DL) - DS Branch</h3>
+            <ul>
+                <li><a href="Deep Learning syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="DL_DeepCNNs.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="DL Lab1 Logistic Regression" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="ds_fip">
+            <h3>FIP - DS Branch</h3>
+            <ul>
+                <li><a href="FIP Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="image segmentation.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="FIP_LAB_01_Image enhancement using Arthimetic operation - Jupyter Notebook.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="ds_wt">
+            <h3>Web Technologies (WT) - DS Branch</h3>
+            <ul>
+                <li><a href="WT Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="1. html_fulltutorial (1).pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="2. TutorialsPoint CSS.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="R19_Student_Lab_Manual_Web_Technology (1).pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="ds_oops">
+            <h3>Object-Oriented Programming Systems (OOPS) - DS Branch</h3>
+            <ul>
+                <li><a href="OOPS syllabus.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="OOPS M1 - Unit 01 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="OOPS M1 - Unit 02 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="CS8383- Object Oriented Programming Laboratory manual- By LearnEngineering.in.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="aiml_dl">
+            <h3>Deep Learning (DL) - AIML Branch</h3>
+            <ul>
+                <li><a href="Deep Learning syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="DL_DeepCNNs.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="DL Lab1 Logistic Regression" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="aiml_fip">
+            <h3>FIP - AIML Branch</h3>
+            <ul>
+                <li><a href="FIP Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="image segmentation.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="FIP_LAB_01_Image enhancement using Arthimetic operation - Jupyter Notebook.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="aiml_wt">
+            <h3>Web Technologies (WT) - AIML Branch</h3>
+            <ul>
+                <li><a href="WT Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="1. html_fulltutorial (1).pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="2. TutorialsPoint CSS.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="R19_Student_Lab_Manual_Web_Technology (1).pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="aiml_oops">
+            <h3>Object-Oriented Programming Systems (OOPS) - AIML Branch</h3>
+            <ul>
+                <li><a href="OOPS syllabus.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="OOPS M1 - Unit 01 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="OOPS M1 - Unit 02 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="CS8383- Object Oriented Programming Laboratory manual- By LearnEngineering.in.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="csbs_dl">
+            <h3>Deep Learning (DL) - CSBS Branch</h3>
+            <ul>
+                <li><a href="Deep Learning syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="DL_DeepCNNs.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="DL Lab1 Logistic Regression" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="csbs_fip">
+            <h3>FIP - CSBS Branch</h3>
+            <ul>
+                <li><a href="FIP Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="image segmentation.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="FIP_LAB_01_Image enhancement using Arthimetic operation - Jupyter Notebook.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="csbs_wt">
+            <h3>Web Technologies (WT) - CSBS Branch</h3>
+            <ul>
+                <li><a href="WT Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="1. html_fulltutorial (1).pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="2. TutorialsPoint CSS.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="R19_Student_Lab_Manual_Web_Technology (1).pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="csbs_oops">
+            <h3>Object-Oriented Programming Systems (OOPS) - CSBS Branch</h3>
+            <ul>
+                <li><a href="OOPS syllabus.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="OOPS M1 - Unit 01 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="OOPS M1 - Unit 02 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="CS8383- Object Oriented Programming Laboratory manual- By LearnEngineering.in.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="cse_dl">
+            <h3>Deep Learning (DL) - CSE Branch</h3>
+            <ul>
+                <li><a href="Deep Learning syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="DL_DeepCNNs.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="DL Lab1 Logistic Regression" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="cse_fip">
+            <h3>FIP - CSE Branch</h3>
+            <ul>
+                <li><a href="FIP Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="image segmentation.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="FIP_LAB_01_Image enhancement using Arthimetic operation - Jupyter Notebook.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="cse_wt">
+            <h3>Web Technologies (WT) - CSE Branch</h3>
+            <ul>
+                <li><a href="WT Syllubas.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="1. html_fulltutorial (1).pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="2. TutorialsPoint CSS.pdf" target="_blank">Theory Study Material</a></li>
+                <li><a href="R19_Student_Lab_Manual_Web_Technology (1).pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+        <section class="subject-details" id="cse_oops">
+            <h3>Object-Oriented Programming Systems (OOPS) - CSE Branch</h3>
+            <ul>
+                <li><a href="OOPS syllabus.pdf" target="_blank">Syllabus</a></li>
+                <li><a href="OOPS M1 - Unit 01 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="OOPS M1 - Unit 02 Part 01.pptx" target="_blank">Theory Study Material</a></li>
+                <li><a href="CS8383- Object Oriented Programming Laboratory manual- By LearnEngineering.in.pdf" target="_blank">Lab Experiments</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>ACSE Department, © 2024</p>
+    </footer>
+</body>
+</html>
